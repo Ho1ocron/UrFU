@@ -40,22 +40,16 @@ for i in range(len(char_list)):
         if char_list[i][1] < char_list[j][1]:
             char_list[i], char_list[j] = char_list[j], char_list[i]
 
-k = 1
-for char, count in char_list:
-    print(f"{k}){char}:{count}")
-    k += 1
-    if k == 4:
-        break
-
 print(f"Количество гласных символов: {number_of_volwes}")
 print(f"Количество согласных символов: {number_of_consonants}")
 print(f"Количество пробелов: {number_of_spaces}")
 print(f"Количество слов: {words_number}")
 
-print(f"Топ 3 самых встречающихся символов: {char_list[:3]}")
+print(f"Топ 3 самых встречающихся символов: ")
+
 k = 0
 for el in char_list:
-    print(el[0], end=" ")
+    print(f"{k+1}) {el[0]}")
     k += 1
     if k == 3:
         break
