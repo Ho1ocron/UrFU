@@ -1,4 +1,5 @@
 text = str(input("Введите текст: ")).lower()
+text = text.replace(" ", "_")
 
 # Б, В, Г, Д, Ж, З, Й, К, Л, М, Н, П, Р, С, Т, Ф, Х, Ц, Ч, Ш, Щ.
 alf_consonants = "БВГДЖЗЙКЛМНПРСТФХЦЧШЩ".lower()
@@ -50,5 +51,11 @@ print(f"Количество гласных символов: {number_of_volwes}
 print(f"Количество согласных символов: {number_of_consonants}")
 print(f"Количество пробелов: {number_of_spaces}")
 print(f"Количество слов: {words_number}")
-print(f"Топ 3 самых встречающихся символов: {char_list}")
 
+print(f"Топ 3 самых встречающихся символов: {char_list[:3]}")
+k = 0
+for el in char_list:
+    print(el[0], end=" ")
+    k += 1
+    if k == 3:
+        break
