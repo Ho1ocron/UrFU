@@ -51,9 +51,6 @@ int main() {
 
     Book get_ebook = ebook.get_book(0);
     std::cout << get_ebook.get_name() << "\n";
-    // Book* book_ptr = &book;
-    // delete book_ptr;
-    // book_ptr = nullptr;
 
     return 0;
 }

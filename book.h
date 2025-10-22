@@ -20,5 +20,6 @@ public:
     const std::string& get_name() const;
 
     Book(std::string& name, std::string& author) : _name(name), _author(author) {}
-    
+    ~Book() {std::cout << "Destructor called!" << std::endl;}
+
 };
