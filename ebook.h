@@ -1,8 +1,10 @@
+#pragma once
+
 #include "book.h"
 #include <vector>
 
 
-class Ebook : Book
+class Ebook
 {
 private:
     int _storage;
@@ -17,10 +19,9 @@ public:
 
     const std::vector<Book>& get_books() const;
 
-    const Book& get_book(std::string& book_name) const;
+    const Book& get_book(const int& book_number) const;
 
     Ebook operator+(const Book&);
 
-    Ebook(int& storage, std::vector<Book>& books) : _storage(storage), _books(_storage) {}
-    ~Ebook();
+    Ebook(int& storage) : _storage(storage) {}
 };
