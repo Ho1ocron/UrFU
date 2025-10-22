@@ -1,24 +1,19 @@
-#include "main.h"
-#include <vector>
+#include <iostream>
+#include <string>
 
 
-class Ebook : Book
+class Book 
 {
 private:
-    int _storage;
-    std::vector<Book> _books;
+    std::string _name;
+    std::string _author;
 
 public:
-    void set_storage(const int&);
+    // setters
+    void set_author(const std::string& author);
+    void set_name(const std::string& name);
 
-    const int& get_storage() const;
-
-    void add_books(const Book&);
-
-    const std::vector<Book>& get_books() const;
-
-    Ebook operator+(const Ebook&);
-
-    Ebook(int& storage, std::vector<Book>& books) : _storage(storage), _books(books) {}
-    ~Ebook();
+    // getters
+    const std::string& get_author() const;
+    const std::string& get_name() const;
 };

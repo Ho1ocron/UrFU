@@ -1,5 +1,5 @@
-#include "main.h"
 #include "book.h"
+#include "ebook.h"
 
 
 void Book::set_author(const std::string& author) {
@@ -7,8 +7,18 @@ void Book::set_author(const std::string& author) {
 }
 
 
-std::string Book::get_author() {
+const std::string& Book::get_author() const {
     return this->_author;
+}
+
+
+void Book::set_name(const std::string& name) {
+    this->_name = name;
+}
+
+
+const std::string& Book::get_name() const {
+    return this->_name;
 }
 
 
@@ -17,13 +27,22 @@ void Ebook::set_storage(const int& other) {
 }
 
 
-void Ebook::add_books(const Book& book) {
+void Ebook::add_book(const Book& book) {
     this->_books.push_back(book);
 }
 
 
-void Ebook::set_storage(const int& storage) {
-    this->_storage = storage;
+Ebook Ebook::operator+(const Book& other) {
+    this->_books.push_back(other);
+}
+
+
+const Book& Ebook::get_book(std::string& book_name) const {
+    for (size_t i; i < _books.size(); ++i) {
+        if (_books[i].get_name() == book_name) {
+            return _books[i];
+        }
+    }
 }
 
 
